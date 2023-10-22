@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include 'layout/header.html' %}
+  <link href="{{ url_for('static', filename='assets/css/a.css' ) }}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  {% include 'layout/topbar.html' %}
+
+  <!-- ======= Sidebar ======= -->
+  {% include 'layout/sidebar.html' %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-1 col-md-14">
+              <div class="card info-card sales-card">
+                <div class="card-body">
+                  <h5 class="card-title"> Deteksi Dan Perhitungan </h5>
+                  <div style=" display: flex;">
+                    <div style="flex: 50%;">
+                      <h4 class="card-title"> Data Uji Sebelum Deteksis </h5>
+                        <div>
+                          <img src="{{ url_for('display_image', filename=filename) }}" style="width: 90%;height: 90%;">
+                        </div>
+                    </div>
+                    <div  style="flex: 50%;">
+                      <h4 class="card-title">  Grayscales</h5>
+                        <div>
+                          <img src="{{ url_for('display_image', filename=file1) }}" style="width: 90%;height:90%;">
+                        </div>
+                    </div>
+                  </div> 
+                 
+                  <br/>
+                  
+                  <div style=" display: flex;">
+                    <div style="flex: 50%;">
+                      <h4 class="card-title">  Treshold </h5>
+                        <div>
+                          <img src="{{ url_for('display_image', filename=file11) }}" style="width: 90%;height: 90%;">
+                        </div>
+                    </div>
+                    <div  style="flex: 50%;">
+                      <h4 class="card-title">  Bounding Treshold</h5>
+                        <div>
+                          <img src="{{ url_for('display_image', filename=file111) }}" style="width: 90%;height:90%;">
+                        </div>
+                    </div>
+                  </div> 
+                  <h4 class="card-title"> Data Uji Setelah Deteksi </h5>
+                    <div>
+                      <img src="{{ url_for('display_image', filename=files) }}" style="width: 50%;height: 50%;">
+                    </div>
+                  <p>Kendaraan Terdeteksi : {{count}}</p>
+                  <br/>
+                  <button type="button" class="btn btn-primary"><a href="{{ url_for('deteksi') }}" style="color: white;">Kembali Uji</a></button>
+                  <!-- <div>
+                    <img src="{{ url_for('display_image', filename=filename) }}" style="width: 50%;height: 50%;">
+                  </div> -->
+                </div>
+              </div><!-- End Sales Card -->
+              <!-- News & Updates Traffic -->
+            </div>
+          </div>
+        </div>
+    </section>
+
+  </main><!-- End #main -->
+  {% include 'layout/footer.html' %}
+</body>
+
+
+</html>
